@@ -6,55 +6,57 @@ BEGIN
 	BEGIN
 		INSERT INTO desastres_final (cuatrenio,temp_avg,oxi_avg,t_tsunamis,t_olascalor,t_terremotos,t_erupciones,t_incendios,m_jovenes_avg,m_adutos_avg,m_ancianos_avg)
 		SELECT r.rango,
-		       AVG(c.temperatura) avg_temp, 
-		       AVG(c.oxigeno) avg_oxi, 
-		       SUM(d.tsunamis) sum_tsu,
-		       SUM(d.olas_calor) sum_olar_calor,
-		       SUM(d.terremotos) sum_terremotos,
-		       SUM(d.erupciones) sum_erup,
-		       SUM(d.incendios) sum_inc,
-		       AVG(m.joven) avg_jov,
-		       AVG(m.adulto) avg_adu,
-		       AVG(m.anciano) avg_anc
+		       c.temperatura avg_temp, 
+		       c.oxigeno avg_oxi, 
+		       d.tsunamis sum_tsu,
+		       d.olas_calor sum_olar_calor,
+		       d.terremotos sum_terremotos,
+		       d.erupciones sum_erup,
+		       d.incendios sum_inc,
+		       m.joven avg_jov,
+			   m.adulto avg_adu,
+			   m.anciano avg_anc
 		FROM ( SELECT '2023-2026' as rango
 		       UNION 
 		       SELECT '2027-2030' as rango
 		     ) r
 		
-		INNER JOIN ( SELECT temperatura,
-		                    oxigeno,
+		INNER JOIN ( SELECT AVG(temperatura) temperatura,
+		                    AVG(oxigeno) oxigeno,
 		                    CASE
 		                       WHEN año BETWEEN 2023 AND 2026 THEN '2023-2026'
 		                       WHEN año BETWEEN 2027 AND 2030 THEN '2027-2030'
 		                    END rango
 		             FROM clima
+		             GROUP BY rango
 		           ) c
 		   ON r.rango = c.rango
-		INNER JOIN ( SELECT tsunamis,
-		                    olas_calor,
-		                    terremotos,
-		                    erupciones,
-		                    incendios,
+		INNER JOIN ( SELECT SUM(tsunamis) tsunamis,
+		                    SUM(olas_calor) olas_calor,
+		                    SUM(terremotos) terremotos,
+		                    SUM(erupciones) erupciones,
+		                    SUM(incendios) incendios,
 		                    CASE
 			                   WHEN año BETWEEN 2023 AND 2026 THEN '2023-2026'
 			                   WHEN año BETWEEN 2027 AND 2030 THEN '2027-2030'
 			                END AS rango
 		             FROM desastres
+		             GROUP BY rango
 		           ) d 
 		   ON c.rango = d.rango
-		INNER JOIN (SELECT r_menor15 joven,
-		                   r_15_a_30 + r_30_a_45 + r_45_a_60 adulto,
-		                   r_m_a_60 anciano,
+		INNER JOIN (SELECT AVG(r_menor15) joven,
+		                   AVG(r_15_a_30 + r_30_a_45 + r_45_a_60) adulto,
+		                   AVG(r_m_a_60) anciano,
 		                   CASE
 			                  WHEN año BETWEEN 2023 AND 2026 THEN '2023-2026'
 			                  WHEN año BETWEEN 2027 AND 2030 THEN '2027-2030'
 			               END AS rango
 		                   
 		            FROM muertes
+		            GROUP BY rango
 		            ) m
 		   ON d.rango = m.rango
-		   
-		GROUP BY r.rango;
+		;
 		
 		
 		
