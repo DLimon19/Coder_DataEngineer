@@ -1,0 +1,151 @@
+root - WARNING - No active connection to close.
+root - ERROR - Failed to create connection: (psycopg2.errors.UndefinedObject) unrecognized configuration parameter "standard_conforming_strings"
+
+[SQL: show standard_conforming_strings]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection to Redshift closed.
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'db_engine'
+root - INFO - Connection to Redshift closed.
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': {'S': 'ERROR', 'C': '42P01', 'M': 'relation "sqlite_master" does not exist', 'F': '../src/pg/src/backend/catalog/namespace.c', 'L': '285', 'R': 'LocalRangeVarGetRelid'}
+root - INFO - Connection to Redshift closed.
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': {'S': 'ERROR', 'C': '42P01', 'M': 'relation "sqlite_master" does not exist', 'F': '../src/pg/src/backend/catalog/namespace.c', 'L': '285', 'R': 'LocalRangeVarGetRelid'}
+root - INFO - Connection to Redshift closed.
+root - ERROR - Failed to create connection: (psycopg2.errors.UndefinedObject) unrecognized configuration parameter "standard_conforming_strings"
+
+[SQL: show standard_conforming_strings]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+root - WARNING - No active connection to close.
+root - INFO - Connection created
+root - WARNING - No active connection to close.
+root - INFO - Connection created
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'conn'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'Engine' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': relation "sqlite_master" does not exist
+
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': relation "sqlite_master" does not exist
+
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'Connection' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: Execution failed on sql '
+        SELECT
+            name
+        FROM
+            sqlite_master
+        WHERE
+            type IN ('table', 'view')
+            AND name=?;
+        ': relation "sqlite_master" does not exist
+
+root - INFO - Connection to Redshift closed.
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: DataConn.get_conn() missing 1 required positional argument: 'self'
+root - WARNING - No active connection to close.
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: DataConn.__init__() missing 2 required positional arguments: 'config' and 'schema'
+root - WARNING - No active connection to close.
+root - WARNING - Check the data format
+root - INFO - Connection created
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'connection'
+root - INFO - Connection to Redshift closed.
+root - WARNING - Check the data format
+root - INFO - Connection created
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - WARNING - Check the data format
+root - INFO - Connection created
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'connection'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'DataConn' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: DataConn.__init__() missing 2 required positional arguments: 'config' and 'schema'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'Engine' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: 'Connection' object has no attribute 'cursor'
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(50)
+
+[SQL: INSERT INTO luis_981908_coderhouse.stage_covid_data ("FIPS", "Admin2", "Province_State", "Country_Region", "Last_Update", "Lat", "Long_", "Confirmed", "Deaths", "Recovered", "Active", "Combined_Key", "Incident_Rate", "Case_Fatality_Ratio") VALUES (%(FIPS)s, %(Admin2)s, %(Province_State)s, %(Country_Region)s, %(Last_Update)s, %(Lat)s, %(Long_)s, %(Confirmed)s, %(Deaths)s, %(Recovered)s, %(Active)s, %(Combined_Key)s, %(Incident_Rate)s, %(Case_Fatality_Ratio)s)]
+[parameters: ({'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Afghanistan', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '33.93911', 'Long_': '67.709953', 'Confirmed': '209451', 'Deaths': '7896', 'Recovered': '', 'Active': '', 'Combined_Key': 'Afghanistan', 'Incident_Rate': '538.0424508714615', 'Case_Fatality_Ratio': '3.76985547932452'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Albania', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '41.1533', 'Long_': '20.1683', 'Confirmed': '334457', 'Deaths': '3598', 'Recovered': '', 'Active': '', 'Combined_Key': 'Albania', 'Incident_Rate': '11621.96817012996', 'Case_Fatality_Ratio': '1.075773567304616'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Algeria', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '28.0339', 'Long_': '1.6596', 'Confirmed': '271496', 'Deaths': '6881', 'Recovered': '', 'Active': '', 'Combined_Key': 'Algeria', 'Incident_Rate': '619.132365905185', 'Case_Fatality_Ratio': '2.534475646050034'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Andorra', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '42.5063', 'Long_': '1.5218', 'Confirmed': '47890', 'Deaths': '165', 'Recovered': '', 'Active': '', 'Combined_Key': 'Andorra', 'Incident_Rate': '61981.49226687375', 'Case_Fatality_Ratio': '0.34453956984756734'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Angola', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '-11.2027', 'Long_': '17.8739', 'Confirmed': '105288', 'Deaths': '1933', 'Recovered': '', 'Active': '', 'Combined_Key': 'Angola', 'Incident_Rate': '320.35277020195906', 'Case_Fatality_Ratio': '1.835916723653218'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Antarctica', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '-71.9499', 'Long_': '23.347', 'Confirmed': '11', 'Deaths': '0', 'Recovered': '', 'Active': '', 'Combined_Key': 'Antarctica', 'Incident_Rate': '', 'Case_Fatality_Ratio': '0.0'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Antigua and Barbuda', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '17.0608', 'Long_': '-61.7964', 'Confirmed': '9106', 'Deaths': '146', 'Recovered': '', 'Active': '', 'Combined_Key': 'Antigua and Barbuda', 'Incident_Rate': '9298.668409443671', 'Case_Fatality_Ratio': '1.6033384581594552'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Argentina', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '-38.4161', 'Long_': '-63.6167', 'Confirmed': '10044957', 'Deaths': '130472', 'Recovered': '', 'Active': '', 'Combined_Key': 'Argentina', 'Incident_Rate': '22225.43269916568', 'Case_Fatality_Ratio': '1.2988806223859395'}  ... displaying 10 of 4016 total bound parameter sets ...  {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Zambia', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '-13.133897', 'Long_': '27.849332', 'Confirmed': '343135', 'Deaths': '4057', 'Recovered': '', 'Active': '', 'Combined_Key': 'Zambia', 'Incident_Rate': '1866.491629984319', 'Case_Fatality_Ratio': '1.1823334839057513'}, {'FIPS': '', 'Admin2': '', 'Province_State': '', 'Country_Region': 'Zimbabwe', 'Last_Update': '2023-03-10 04:21:03', 'Lat': '-19.015438', 'Long_': '29.154857', 'Confirmed': '264276', 'Deaths': '5671', 'Recovered': '', 'Active': '', 'Combined_Key': 'Zimbabwe', 'Incident_Rate': '1778.0885285919792', 'Case_Fatality_Ratio': '2.1458626587355645'})]
+(Background on this error at: https://sqlalche.me/e/14/9h9h)
+root - INFO - Connection to Redshift closed.
+root - INFO - Connection created
+root - WARNING - Check the data format
+root - INFO - Data from the DataFrame has been uploaded to the luis_981908_coderhouse.stage_covid_data table in Redshift.
+root - INFO - Connection to Redshift closed.
