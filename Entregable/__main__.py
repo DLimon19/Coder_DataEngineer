@@ -1,5 +1,6 @@
 import os
 import logging
+import pandas as pd
 
 from modules import DataManager
 from dotenv import load_dotenv
@@ -25,6 +26,7 @@ dbname = os.getenv('REDSHIFT_DBNAME')
 # se asignan variables con el schema y la tabla de la base de datos
 schema = "luis_981908_coderhouse"
 table = "stage_covid_data"
+view = "covid_data_analist"
 
 # se crea la conexion a redshift
 connection_url = f"redshift+psycopg2://{username}:{password}@{host}:{port}/{dbname}"
@@ -51,6 +53,11 @@ try:
     )
 
     logging.info(f"Data from the DataFrame has been uploaded to the {schema}.{table} table in Redshift.")
+
+    # Se hace consulta a la vista covid_data_analist
+    result = db_engine.execute('SELECT * FROM covid_data_analist')
+    res_df = pd.DataFrame(result)
+    print(res_df[["province_state","country_region","deaths"]].head())
         
 except Exception as e:
     logging.error(f"Failed to upload data to {schema}.{table}: {e}")
