@@ -55,3 +55,55 @@ server closed the connection unexpectedly
 2024-06-19 01:13:03,434 - root - WARNING - Check the data format
 2024-06-19 01:19:28,887 - root - INFO - Data from the DataFrame has been uploaded to the luis_981908_coderhouse.stage_covid_data table in Redshift.
 2024-06-19 01:19:30,655 - root - INFO - Connection to Redshift closed.
+2024-06-30 14:10:02,726 - root - WARNING - Check the data format
+2024-06-30 14:10:02,726 - root - WARNING - Execute it before
+2024-06-30 14:10:02,726 - root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: invalid literal for int() with base 10: ''
+2024-06-30 14:10:02,726 - root - WARNING - No active connection to close.
+2024-06-30 14:12:13,947 - root - WARNING - Check the data format
+2024-06-30 14:12:13,947 - root - WARNING - Execute it before
+2024-06-30 14:12:13,947 - root - ERROR - Failed to upload data to luis_981908_coderhouse.stage_covid_data: invalid literal for int() with base 10: ''
+2024-06-30 14:12:13,947 - root - WARNING - No active connection to close.
+2024-06-30 14:13:42,281 - root - WARNING - Check the data format
+2024-06-30 14:13:42,281 - root - WARNING - Execute it before
+2024-06-30 14:13:43,873 - root - INFO - Connection created
+2024-06-30 14:21:30,393 - root - INFO - Data from the DataFrame has been uploaded to the luis_981908_coderhouse.stage_covid_data table in Redshift.
+2024-06-30 14:21:30,393 - root - INFO - Connection to Redshift closed.
+2024-06-30 14:48:28,823 - root - ERROR - Failed to excecute sql command: 'DataConn' object has no attribute 'execute'
+2024-06-30 14:49:02,156 - root - ERROR - Failed to excecute sql command: 'NoneType' object has no attribute 'execute'
+2024-06-30 14:54:49,585 - root - WARNING - Execute it before
+2024-06-30 14:54:50,917 - root - INFO - Connection created
+2024-06-30 14:54:50,918 - root - ERROR - Failed to excecute sql command: 'DataConn' object has no attribute 'execute'
+2024-06-30 14:56:05,480 - root - WARNING - Execute it before
+2024-06-30 14:56:06,796 - root - INFO - Connection created
+2024-06-30 14:56:07,169 - root - ERROR - Failed to excecute sql command: (psycopg2.errors.UndefinedTable) relation "stage_covid_data" does not exist
+
+[SQL: 
+
+-- Se crea la vista con masking en el campo deaths
+CREATE OR REPLACE VIEW covid_data_analist AS
+(
+	SELECT sc.province_state, 
+	       sc.country_region, 
+	       sc.last_update, 
+	       sc.lat, sc.long_ AS long, 
+	       sc.confirmed, 
+	       regexp_replace(sc.deaths::text, '[[:digit:]]'::text, '*'::text) AS deaths, 
+	       sc.recovered, 
+	       sc.active, 
+	       sc.incident_rate, 
+	       sc.case_fatality_ratio
+   FROM stage_covid_data sc
+)]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2024-06-30 14:57:56,803 - root - WARNING - Execute it before
+2024-06-30 14:57:58,131 - root - INFO - Connection created
+2024-06-30 14:57:58,476 - root - ERROR - Failed to excecute sql command: (psycopg2.ProgrammingError) can't execute an empty query
+[SQL: 
+]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2024-06-30 15:04:24,550 - root - WARNING - Execute it before
+2024-06-30 15:04:25,846 - root - INFO - Connection created
+2024-06-30 15:04:26,035 - root - INFO - Connection to Redshift closed.
+2024-06-30 15:04:32,214 - root - WARNING - Check the data format
+2024-06-30 15:12:24,206 - root - INFO - Data from the DataFrame has been uploaded to the luis_981908_coderhouse.stage_covid_data table in Redshift.
+2024-06-30 15:12:24,206 - root - INFO - Connection to Redshift closed.
