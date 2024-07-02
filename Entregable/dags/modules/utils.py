@@ -1,12 +1,6 @@
 from sqlalchemy import create_engine
-import logging
 import psycopg2
 
-logging.basicConfig(
-    filename='app.log',
-    filemode='a',
-    format='%(asctime)s ::DataConnectionModule-> %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO)
 
 def executeSqlFromFile(**kwargs):
     print(f"Creando la tabla en la base de datos: {kwargs["exec_date"]}") 
@@ -39,7 +33,6 @@ def executeSqlFromFile(**kwargs):
         try:
             cur.execute(command)
         except Exception as e:
-            #logging.error(f"Failed to excecute sql command: {e}")
             print(f"Failed to excecute sql command: {e}")
             raise
     
