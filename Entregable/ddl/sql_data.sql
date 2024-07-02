@@ -1,5 +1,5 @@
 -- Se crea la tabla stage_covid_data
-CREATE TABLE IF NOT EXISTS stage_covid_data(
+CREATE TABLE IF NOT EXISTS luis_981908_coderhouse.stage_covid_data(
     fips	             VARCHAR(200)
 ,   admin2	             VARCHAR(200)
 ,   province_state	     VARCHAR(200)
