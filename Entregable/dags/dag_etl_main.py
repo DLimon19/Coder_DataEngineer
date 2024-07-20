@@ -7,6 +7,7 @@ from modules import get_data, get_conn, upload_data, executeSqlFromFile
 
 # Operadores
 from airflow.operators.python import PythonOperator
+from airflow.operators.email import EmailOperator
 import os
 
 
@@ -35,7 +36,10 @@ redshift_conn = {
 # argumentos por defecto para el DAG
 default_args = {
     'owner': 'danielrdz',
-    'start_date': datetime(2024,6,30),
+    'start_date': datetime(2024,7,15),
+    'email': ['luis_981908@hotmail.com'],
+    'email_on_failure': True,
+    'email_on_retry': True,
     'retries':5,
     'retry_delay': timedelta(minutes=5)
 }
@@ -84,5 +88,18 @@ task_4 = PythonOperator(
     dag=ETL_dag,
 )
 
+email_success = EmailOperator(
+        task_id='enviar_email',
+        to='luis_981908@hotmail.com',
+        subject='Airflow ETL exitoso',
+        html_content= f"""
+                    Hola, <br>
+                    <p>Este es un mensaje de alerta</p> 
+                    <p>El proceso ETL Covid termino exitosamente</p>
+                    <br> Gracias. <br>
+                """,
+        dag=ETL_dag
+)
+
 # Definicion orden de tareas
-task_1 >> task_2 >> task_3 >> task_4
+task_1 >> task_2 >> task_3 >> task_4 >> email_success

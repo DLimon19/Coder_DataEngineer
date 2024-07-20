@@ -4,7 +4,8 @@ import json
 
 from sqlalchemy import create_engine
 from datetime import datetime
-    
+
+# Funcion para la conexion a la base de datos    
 def get_conn(**kwargs):
     print(f"Conectandose a la BD en la fecha: {kwargs["exec_date"]}") 
     try:
@@ -20,17 +21,27 @@ def get_conn(**kwargs):
         print("Unable to connect to Redshift.")
         print(e)
 
+# Funcion para la carga a la base de datos
 def upload_data(**kwargs):
 
     print(f"Cargando la data para la fecha: {kwargs["exec_date"]}")
     date = datetime.strptime(kwargs["exec_date"], '%Y-%m-%d %H')
-
-    path = kwargs["dag_path"]+'/raw_data/'+"data_"+str(date.year)+'-'+str(date.month)+'-'+str(date.day)+'-'+str(date.hour)+".json"
-
-    with open(path, "r") as json_file:
-        loaded_data=json.load(json_file)
-    records = pd.json_normalize(loaded_data)
     
+    path_covid = kwargs["dag_path"]+'/raw_data/'+"data_covid_"+str(date.year)+'-'+str(date.month)+'-'+str(date.day)+'-'+str(date.hour)+".json"
+
+    with open(path_covid, "r") as json_file:
+        loaded_covid_data=json.load(json_file)
+    records_covid = pd.json_normalize(loaded_covid_data)
+
+    path_paises = kwargs["dag_path"]+'/raw_data/'+"data_paises_"+str(date.year)+'-'+str(date.month)+'-'+str(date.day)+'-'+str(date.hour)+".json"
+
+    with open(path_paises, "r") as json_file:
+        loaded_paises_data=json.load(json_file)
+
+    list_paises = [i["name"]["common"] for i in loaded_paises_data]
+
+    filtered_data = records_covid[records_covid["Country_Region"].isin(list_paises)]
+
     host = kwargs["config"]["host"]
     dbname = kwargs["config"]["database"]
     username = kwargs["config"]["username"]
@@ -41,7 +52,7 @@ def upload_data(**kwargs):
     db_engine = create_engine(connection_url)
     
     try:
-        records.to_sql(
+        filtered_data.to_sql(
             kwargs["table"],
             con=db_engine,
             schema=kwargs["schema"],

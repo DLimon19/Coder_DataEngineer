@@ -39,3 +39,4 @@ def executeSqlFromFile(**kwargs):
     cur.execute("COMMIT")
     if cur.closed == False:
         cur.close()
+
